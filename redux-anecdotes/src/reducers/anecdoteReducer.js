@@ -9,30 +9,40 @@ const anecdotesAtStart = [
 
 export const getId = () => (100000 * Math.random()).toFixed(0);
 
-export const asObject = (anecdote) => {
+/*export const asObject = (anecdote) => {
   return {
     content: anecdote,
     id: getId(),
     votes: 0,
   };
-};
+};*/
 
 export const addVote = (data) => {
-  return { type: "VOTE_ADD", data };
+  return {
+    type: "VOTE_ADD",
+    data,
+  };
 };
 
-export const createAnecdote = (content) => {
+export const createAnecdote = (data) => {
   return {
     type: "ANECDOTE_ADD",
-    data: asObject(content),
+    data,
+  };
+};
+
+export const initializeAnecdotes = (anecdotes) => {
+  return {
+    type: "INIT_ANECDOTES",
+    data: anecdotes,
   };
 };
 
 const sortAnecdotes = (state) => state.sort((a, b) => a.votes < b.votes);
 
-export const initialState = anecdotesAtStart.map(asObject);
+//export const initialState = anecdotesAtStart.map(asObject);
 
-const anecdoteReducer = (state = initialState, action) => {
+const anecdoteReducer = (state = [], action) => {
   switch (action.type) {
     case "VOTE_ADD":
       let voteAddState = [...state];
@@ -45,6 +55,8 @@ const anecdoteReducer = (state = initialState, action) => {
       let newAnecdote = { ...action.data };
       let anecdoteAddState = [...state];
       return sortAnecdotes(anecdoteAddState.concat(newAnecdote));
+    case "INIT_ANECDOTES":
+      return sortAnecdotes(action.data);
     default:
       return sortAnecdotes(state);
   }
