@@ -1,7 +1,6 @@
 import React from "react";
 import { addVote } from "../reducers/anecdoteReducer";
 import { useSelector, useDispatch } from "react-redux";
-import anecdoteService from "../services/anecdotes";
 
 export default function Anecdotes() {
   const anecdotes = useSelector((state) => {
@@ -15,7 +14,6 @@ export default function Anecdotes() {
 
   const vote = async (anecdote) => {
     dispatch(addVote(anecdote));
-    await anecdoteService.update(anecdote, anecdote.id);
   };
 
   return (
