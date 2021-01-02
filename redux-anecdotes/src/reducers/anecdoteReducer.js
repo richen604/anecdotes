@@ -17,8 +17,8 @@ export const asObject = (anecdote) => {
   };
 };
 
-export const addVote = (id) => {
-  return { type: "VOTE_ADD", id: id };
+export const addVote = (data) => {
+  return { type: "VOTE_ADD", data };
 };
 
 export const createAnecdote = (content) => {
@@ -30,13 +30,15 @@ export const createAnecdote = (content) => {
 
 const sortAnecdotes = (state) => state.sort((a, b) => a.votes < b.votes);
 
-const initialState = anecdotesAtStart.map(asObject);
+export const initialState = anecdotesAtStart.map(asObject);
 
-const reducer = (state = initialState, action) => {
+const anecdoteReducer = (state = initialState, action) => {
   switch (action.type) {
     case "VOTE_ADD":
       let voteAddState = [...state];
-      let anecdote = voteAddState.find((anecdote) => anecdote.id === action.id);
+      let anecdote = voteAddState.find(
+        (anecdote) => anecdote.id === action.data.id
+      );
       anecdote.votes += 1;
       return sortAnecdotes(voteAddState);
     case "ANECDOTE_ADD":
@@ -48,4 +50,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default anecdoteReducer;
