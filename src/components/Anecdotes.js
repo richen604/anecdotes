@@ -1,20 +1,20 @@
-import React from "react";
-import { addVote } from "../reducers/anecdoteReducer";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react'
+import { addVote } from '../reducers/anecdoteReducer'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Anecdotes() {
   const anecdotes = useSelector((state) => {
-    if (state.filter === "ALL") return state.anecdotes;
+    if (state.filter === 'ALL') return state.anecdotes
 
     return state.anecdotes.filter((ancedote) =>
       ancedote.content.toLowerCase().includes(state.filter.toLowerCase())
-    );
-  });
-  const dispatch = useDispatch();
+    )
+  })
+  const dispatch = useDispatch()
 
   const vote = async (anecdote) => {
-    dispatch(addVote(anecdote));
-  };
+    dispatch(addVote(anecdote))
+  }
 
   return (
     <>
@@ -28,5 +28,5 @@ export default function Anecdotes() {
         </div>
       ))}
     </>
-  );
+  )
 }
