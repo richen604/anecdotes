@@ -18,8 +18,14 @@ const update = async (anecdote, id) => {
   return response.data
 }
 
+const remove = async (id) => {
+  const request = await axios.delete(`${baseUrl}/${id}`)
+  return request.data
+}
+
 export default {
   getAll,
   createNew,
   update,
+  remove
 }

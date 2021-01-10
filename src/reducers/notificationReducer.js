@@ -11,6 +11,8 @@ const notificationReducer = (state = 'HIDE_NOTIFY', action) => {
     return `Vote Added for anecdote: '${action.data.content}'`
   case 'ANECDOTE_ADD':
     return `Anecdote: '${action.data.content}' created!`
+  case 'DELETE_ANECDOTE':
+    return `Anecdote '${action.data.content}' deleted!`
   case 'HIDE_NOTIFY':
     return 'HIDE_NOTIFY'
   default:
