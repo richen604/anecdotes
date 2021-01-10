@@ -24,7 +24,7 @@ export default function Anecdotes() {
     <>
       {anecdotes.map((anecdote) => (
         <div key={anecdote.id}>
-          <div> <strong>Anecdote:</strong> {anecdote.content}</div>
+          <div> <strong>Anecdote:</strong>{`'${anecdote.content}'`}</div>
           <div>
             has {anecdote.votes} votes
             <button onClick={() => vote(anecdote)}>vote</button>
