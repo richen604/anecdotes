@@ -1,5 +1,5 @@
 import React from 'react'
-import { addVote } from '../reducers/anecdoteReducer'
+import { addVote, removeAnecdote } from '../reducers/anecdoteReducer'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default function Anecdotes() {
@@ -16,14 +16,19 @@ export default function Anecdotes() {
     dispatch(addVote(anecdote))
   }
 
+  const remove = async (anecdote) => {
+    dispatch(removeAnecdote(anecdote))
+  }
+
   return (
     <>
       {anecdotes.map((anecdote) => (
         <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
+          <div> <strong>Anecdote:</strong> {anecdote.content}</div>
           <div>
-            has {anecdote.votes}
+            has {anecdote.votes} votes
             <button onClick={() => vote(anecdote)}>vote</button>
+            <button onClick={() => remove(anecdote)}>delete</button>
           </div>
         </div>
       ))}

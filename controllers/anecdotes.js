@@ -4,6 +4,7 @@ const Anecdote = require('../models/anecdote')
 
 anecdotesRouter.get('/', async (request, response) => {
   const anecdotes = await Anecdote.find({})
+
   response.json(anecdotes)
 })
 
@@ -32,8 +33,8 @@ anecdotesRouter.post('/', async (request, response) => {
 
 anecdotesRouter.delete('/:id', async (request, response) => {
   const anecdote = await Anecdote.findById(request.params.id)
-  const deletedAnecdote = await anecdote.findByIdAndDelete(request.params.id)
-  return response.status(204).json(deletedAnecdote)
+  await Anecdote.findByIdAndDelete(request.params.id)
+  return response.status(204).json(anecdote)
 })
 
 anecdotesRouter.put('/:id', async (request, response) => {

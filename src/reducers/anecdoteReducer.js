@@ -23,6 +23,16 @@ export const createAnecdote = (data) => {
   }
 }
 
+export const removeAnecdote = (anecdote) => {
+  return async (dispatch) => {
+    await anecdoteService.remove(anecdote.id)
+    dispatch({
+      type: 'DELETE_ANECDOTE',
+      data: anecdote
+    })
+  }
+}
+
 export const initializeAnecdotes = () => {
   return async (dispatch) => {
     const anecdotes = await anecdoteService.getAll()
@@ -50,6 +60,9 @@ const anecdoteReducer = (state = [], action) => {
     let newAnecdote = { ...action.data }
     let anecdoteAddState = [...state]
     return sortAnecdotes(anecdoteAddState.concat(newAnecdote))
+  case 'DELETE_ANECDOTE':
+    let anecdoteDeleteState = [...state]
+    return sortAnecdotes(anecdoteDeleteState.filter(anecdote => anecdote.id !== action.data.id))
   case 'INIT_ANECDOTES':
     return sortAnecdotes(action.data)
   default:
