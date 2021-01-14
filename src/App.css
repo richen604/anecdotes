@@ -1,0 +1,84 @@
+#nav-bar {
+    position: relative;
+    display:flex;
+    width: 100%;
+    background: #F4F2F3;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    min-height: 4vh;
+}
+
+
+.nav-bar-heading {
+    padding: 15px;
+    padding-top: 19px;
+    margin: 0;
+    margin-left: 25px;
+}
+
+#appBox {
+    vertical-align: middle;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 2rem;
+    height: 94.8vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(326deg, rgba(2,0,36,1) 0%, rgba(8,8,66,1) 9%, rgba(110,114,196,1) 65%);
+}
+
+#anecdotesBox {
+    padding-top: 20px;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    overflow-y:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#anecdotesBox::-webkit-scrollbar {
+  display: none;
+}
+
+#inputBox {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+    padding: 2rem 2rem;
+}
+
+.input-body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 22rem;
+    justify-content: space-between;
+    align-items: space-between;
+    padding: 20px;
+    margin: 16px 10px 10px 10px;
+    background: #F4F2F3;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#filter{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+#anecdote-form{
+    margin: 20px;
+    padding: 20px;
+}

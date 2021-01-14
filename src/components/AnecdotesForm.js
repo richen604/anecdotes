@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { createAnecdote } from '../reducers/anecdoteReducer'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+
 
 export default function AnecdotesForm() {
   const dispatch = useDispatch()
@@ -13,14 +15,14 @@ export default function AnecdotesForm() {
   }
 
   return (
-    <>
-      <h2>create new</h2>
-      <form onSubmit={addAnecdote}>
-        <div>
-          <input name="newAnecdote" />
-        </div>
-        <button type="submit">create</button>
-      </form>
-    </>
+    <Form onSubmit={addAnecdote}>
+      <FormGroup controlId="formBasicEmail">
+        <Label for="newAnecdoteInput">Create New Anecdote</Label>
+        <Input name="newAnecdote" id="newAnecdoteInput" placeholder="Enter anecdote..." />
+      </FormGroup>
+      <Button color="primary" type="submit">
+    Submit
+      </Button>
+    </Form>
   )
 }
