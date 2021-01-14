@@ -33,7 +33,7 @@
     "dev-server": "NODE_ENV=test nodemon server.js",
     "dev-client": "react-scripts start",
     "deploy": "git push heroku main",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin main && npm run deploy",
+    "deploy:full": "npm run build && git add . && git commit -m uibuild && git push origin main && npm run deploy",
     "logs:prod": "heroku logs --tail",
     "lint": "eslint . --fix"
   },
