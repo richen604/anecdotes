@@ -1,0 +1,21 @@
+.mb-2 {
+    width: 90%;
+    margin: 15px;
+    padding: 10px;
+    margin-left: 60px;
+    background: #F4F2F3;
+    border-radius: 6px;
+    z-index: 1;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-container > :last-child {
+    margin-bottom: 3em;
+}
+
+
+.btn-card {
+    margin-top: 8px;
+}

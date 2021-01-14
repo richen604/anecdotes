@@ -8,11 +8,20 @@ export const hideNotify = (notification) => {
 const notificationReducer = (state = 'HIDE_NOTIFY', action) => {
   switch (action.type) {
   case 'VOTE_ADD':
-    return `Vote Added for anecdote: '${action.data.content}'`
+    return {
+      msg: `Vote Added for anecdote: '${action.data.content}'`,
+      variant: 'success'
+    }
   case 'ANECDOTE_ADD':
-    return `Anecdote: '${action.data.content}' created!`
+    return {
+      msg: `Anecdote: '${action.data.content}' created!`,
+      variant: 'success'
+    }
   case 'DELETE_ANECDOTE':
-    return `Anecdote '${action.data.content}' deleted!`
+    return {
+      msg: `Anecdote '${action.data.content}' deleted!`,
+      variant: 'warning'
+    }
   case 'HIDE_NOTIFY':
     return 'HIDE_NOTIFY'
   default:

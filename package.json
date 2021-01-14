@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -12,21 +13,25 @@
     "mongoose-unique-validator": "^2.0.3",
     "path": "^0.12.7",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
     "react-redux": "^7.2.2",
     "react-scripts": "^4.0.1",
     "react-test-renderer": "^17.0.1",
+    "reactstrap": "^8.8.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "npm run server && react-scripts start",
+    "start": "npm run build:ui && npm run start:prod",
     "server": "node server.js",
-    "build": "react-scripts build",
-    "build:ui": "rm -rf build && npm run build",
+    "build": "rm -rf build && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:prod": "NODE_ENV=production node server.js",
+    "dev-server": "NODE_ENV=test nodemon server.js",
+    "dev-client": "react-scripts start",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin main && npm run deploy",
     "logs:prod": "heroku logs --tail",
@@ -52,7 +57,10 @@
     "@testing-library/react": "^11.2.2",
     "dotenv": "^8.2.0",
     "eslint": "^7.17.0",
-    "redux-devtools-extension": "^2.13.8",
-    "prettier": "2.2.1"
+    "eslint-config-prettier": "^7.1.0",
+    "nodemon": "^2.0.7",
+    "prettier": "2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
