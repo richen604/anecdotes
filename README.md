@@ -12,7 +12,7 @@ List your favourite anecdotes in this single page app! This application was buil
 
 Originally making this for the [fso2020](https://fullstackopen.com/en/) course, I've decided to maintain it and showcase it.
 
-It shows knowledge of user authentication, routing, unit testing, end to end testing, state management and production pipelines
+It shows knowledge of flux-architecture, managing state with reducers, redux devtools, asynchronous action creators, and production pipelines
 ## Local Development
 
 - `git fork` or `git clone` this repository and save it locally
