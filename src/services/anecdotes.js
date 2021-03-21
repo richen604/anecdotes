@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+//local development 'http://localhost:{PORT}/api/anecdotes'
+//production '/api/anecdotes'
 const baseUrl = '/api/anecdotes'
 
 const getAll = async () => {

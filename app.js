@@ -32,6 +32,9 @@ app.use(express.json())
 app.use(middleware.requestLogger)
 app.use(middleware.getTokenFrom)
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 app.use('/api/anecdotes', anecdotesRouter)
 
 if (process.env.NODE_ENV === 'test') {
