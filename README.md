@@ -2,7 +2,7 @@
 
 Visit a production view of the application here at [richen-anecdotes](https://richen-anecdotes.herokuapp.com/)
 
-List your favourite blogs! Authenticated and secure, this application was built using [NodeJS](https://nodejs.org/en/), [ReactJS](https://reactjs.org/), [MongoDB](https://www.mongodb.com/), [ReduxJS](https://redux.js.org/), [ExpressJS](https://expressjs.com/) and also includes the following frameworks:
+List your favourite anecdotes in this single page app! This application was built using [NodeJS](https://nodejs.org/en/), [ReactJS](https://reactjs.org/), [MongoDB](https://www.mongodb.com/), [ReduxJS](https://redux.js.org/), [ExpressJS](https://expressjs.com/) and also includes the following frameworks:
 
 - [ReactStrap](https://reactstrap.github.io/) for pre-generated React components
 - [Mongoose](https://mongoosejs.com/) for MongoDB
